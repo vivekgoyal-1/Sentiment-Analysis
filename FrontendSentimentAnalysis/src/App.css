@@ -1,0 +1,319 @@
+/* Base styles */
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f0f0f0;
+  transition: background-color 0.3s;
+}
+
+.app-container {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  transition: background-color 0.3s;
+}
+
+.app-container.dark {
+  background-color: #121212;
+  color: white;
+}
+
+/* Header */
+.header {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 900px;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.title {
+  font-size: 32px;
+  font-weight: bold;
+}
+
+.theme-toggle {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.theme-toggle:hover {
+  background-color: #45a049;
+}
+
+/* Form */
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 900px;
+  margin-bottom: 20px;
+}
+
+.textarea {
+  width: 80%;
+  max-width: 600px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  font-size: 16px;
+  resize: vertical;
+}
+
+.submit-btn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 12px 24px;
+  font-size: 18px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.submit-btn:disabled {
+  background-color: #ccc;
+}
+
+.submit-btn:hover {
+  background-color: #45a049;
+}
+
+/* Error message */
+.error-message {
+  color: red;
+  font-weight: bold;
+}
+
+/* Report Container */
+.report-container {
+  width: 100%;
+  max-width: 900px;
+}
+
+/* Filter Buttons */
+.filter-buttons {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.filter-btn {
+  background-color: #2196F3;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  margin: 0 5px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.filter-btn.active {
+  background-color: #1976D2;
+}
+
+.filter-btn:hover {
+  background-color: #1976D2;
+}
+
+/* Charts */
+.charts-container {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 30px;
+}
+
+.chart,
+.pie-chart {
+  width: 45%;
+  height: 300px;
+}
+
+/* Sentiment Report */
+.sentiment-report {
+  margin-top: 30px;
+}
+
+.sentiment-report ul {
+  list-style: none;
+  padding: 0;
+}
+
+.report-item {
+  background-color: #f9f9f9;
+  padding: 15px;
+  margin-bottom: 15px;
+  color: black;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.report-item p {
+  margin: 5px 0;
+}
+
+/* Media Queries for Responsiveness */
+
+/* Small Screens (Phones) */
+@media (max-width: 600px) {
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .title {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+
+  .theme-toggle {
+    margin-top: 10px;
+  }
+
+  .form {
+    width: 100%;
+    margin-bottom: 15px;
+  }
+
+  .textarea {
+    width: 90%;
+    max-width: 100%;
+    font-size: 14px;
+    padding: 8px;
+  }
+
+  .submit-btn {
+    width: 90%;
+    font-size: 16px;
+  }
+
+  .charts-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .chart,
+  .pie-chart {
+    width: 80%;
+    height: 250px;
+  }
+
+  .filter-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .filter-btn {
+    margin: 5px 0;
+    width: 100%;
+    text-align: center;
+  }
+
+  .sentiment-report {
+    width: 100%;
+    padding: 10px;
+  }
+
+  .report-item {
+    padding: 10px;
+  }
+}
+
+/* Medium Screens (Tablets) */
+@media (min-width: 601px) and (max-width: 1024px) {
+  .header {
+    flex-direction: row;
+  }
+
+  .title {
+    font-size: 28px;
+  }
+
+  .theme-toggle {
+    margin-left: 20px;
+  }
+
+  .form {
+    width: 90%;
+  }
+
+  .textarea {
+    width: 85%;
+    font-size: 15px;
+  }
+
+  .submit-btn {
+    font-size: 17px;
+  }
+
+  .charts-container {
+    flex-direction: row;
+  }
+
+  .chart,
+  .pie-chart {
+    width: 45%;
+    height: 280px;
+  }
+
+  .filter-buttons {
+    justify-content: center;
+  }
+
+  .filter-btn {
+    width: auto;
+    margin: 0 10px;
+  }
+}
+
+/* Large Screens (Desktops) */
+@media (min-width: 1025px) {
+  .header {
+    flex-direction: row;
+  }
+
+  .title {
+    font-size: 32px;
+  }
+
+  .form {
+    width: 70%;
+  }
+
+  .textarea {
+    width: 70%;
+    font-size: 16px;
+  }
+
+  .submit-btn {
+    font-size: 18px;
+  }
+
+  .charts-container {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .chart,
+  .pie-chart {
+    width: 45%;
+    height: 300px;
+  }
+
+  .filter-buttons {
+    justify-content: center;
+  }
+
+  .filter-btn {
+    margin: 0 10px;
+  }
+}
